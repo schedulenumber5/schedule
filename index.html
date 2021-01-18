@@ -14,18 +14,54 @@
             <h1>Ссылки на конференции в ZOOM для 1-А класса</h1>
         </div>
 
-        <div class="content-wrapper">
-            <div class="tue">
-                <h2>Розклад на 19.01:</h2>
-                <p><a href="https://us04web.zoom.us/j/73451199346?pwd=UEZKdUo1aHhCM21xUlJBZXloSXNJdz09"
-                        target="__blank">8:00 - 8:30 - ЯПС</a></p>
-                <p><a href="https://us04web.zoom.us/j/73451199346?pwd=UEZKdUo1aHhCM21xUlJBZXloSXNJdz09"
-                        target="__blank">8:40 - 9:20 - Українська мова</a></p>
-                <p><a href="https://us04web.zoom.us/j/73451199346?pwd=UEZKdUo1aHhCM21xUlJBZXloSXNJdz09"
-                        target="__blank">9:30 - 10:10 - Читання</a></p>
-                <p><a href="https://us04web.zoom.us/j/73451199346?pwd=UEZKdUo1aHhCM21xUlJBZXloSXNJdz09"
-                        target="__blank">10:30 - 11:10 - Математика</a></p>
+        <div class="content-wrapper schedule-wrapper">
+            <div class="content-button">
+                <button onclick="changeDay(-1)">&lt;</button>
             </div>
+            <div class="content-schedule">
+                <h2>Розклад на <span class="date-text"></span></h2>
+                <div class="sun">
+                    <h2>Вихідний</h2>
+                </div>
+
+                <div class="mon">
+                    <p>8:00-8:40- Математика ст.32</p>
+                    <p>8:50-9:30-Читання ст.38</p>
+                    <p>9:50-10:30-Англ.мова(1 гр.)/Українська мова(2гр.)ст.42</p>
+                    <p>10:45-11:25-Англ.мова(2гр.)/ Українська мова(1гр.)ст.42</p>
+                </div>
+
+                <div class="tue">
+                    <p><a href="https://us04web.zoom.us/j/73451199346?pwd=UEZKdUo1aHhCM21xUlJBZXloSXNJdz09"
+                            target="__blank">8:00 - 8:30 - ЯПС</a></p>
+                    <p><a href="https://us04web.zoom.us/j/73451199346?pwd=UEZKdUo1aHhCM21xUlJBZXloSXNJdz09"
+                            target="__blank">8:40 - 9:20 - Українська мова</a></p>
+                    <p><a href="https://us04web.zoom.us/j/73451199346?pwd=UEZKdUo1aHhCM21xUlJBZXloSXNJdz09"
+                            target="__blank">9:30 - 10:10 - Читання</a></p>
+                    <p><a href="https://us04web.zoom.us/j/73451199346?pwd=UEZKdUo1aHhCM21xUlJBZXloSXNJdz09"
+                            target="__blank">10:30 - 11:10 - Математика</a></p>
+                </div>
+
+                <div class="wed">
+
+                </div>
+
+                <div class="thu">
+
+                </div>
+
+                <div class="fri">
+
+                </div>
+
+                <div class="sat">
+                    <h2>Вихідний</h2>
+                </div>
+            </div>
+            <div class="content-button">
+                <button onclick="changeDay(+1)">&gt;</button>
+            </div>
+
         </div>
 
         <div class="content-wrapper">
