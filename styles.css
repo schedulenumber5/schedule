@@ -3,7 +3,7 @@ html, body {
 }
 
 h1 {
-    margin: 0px;
+    margin: 0;
 }
 
 body {
@@ -35,6 +35,9 @@ body {
     margin-top: 10px;
     transition: all .4s ease-out;
     cursor: default;
+}
+.content-wrapper h2 {
+    margin-top: 0;
 }
 
 .content-wrapper:hover {
