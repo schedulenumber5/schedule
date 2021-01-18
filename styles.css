@@ -32,11 +32,11 @@ border-bottom: 1px lightgray solid;
     border-radius: 10px;
     border: 1px lightgray solid;
     margin-top: 10px;
+    transition: all .4s ease-out;
 }
 
 .content-wrapper:hover {
     border: 1px gray solid;
-    transition: all 1s;
 }
 
 .content-wrapper a {
