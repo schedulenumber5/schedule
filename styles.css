@@ -14,9 +14,10 @@ body {
 .container {
     margin: 0 auto;
     width: 900px;
-    height: 100%;
-    border-left: 1px lightgray solid;
-    border-right: 1px lightgray solid;
+    min-height: 100%;
+    border-left: 2px darkgray solid;
+    border-right: 2px darkgray solid;
+    padding: 10px;
 }
 
 .heading {
@@ -30,7 +31,7 @@ border-bottom: 1px lightgray solid;
     padding: 20px;
     border-radius: 10px;
     border: 1px lightgray solid;
-    margin: 10px;
+    margin-top: 10px;
 }
 
 .content-wrapper a {
