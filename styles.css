@@ -13,7 +13,7 @@ body {
 
 .container {
     margin: 0 auto;
-    width: 900px;
+    max-width: 900px;
     min-height: 100%;
     border-left: 2px darkgray solid;
     border-right: 2px darkgray solid;
