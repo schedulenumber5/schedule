@@ -30,7 +30,7 @@ function render() {
     dateText.innerText = '';
     console.log(addDays(new Date(), 1).toLocaleDateString());
     if (currentDate.toLocaleDateString() == (new Date()).toLocaleDateString()) {
-        dateText.innerText += "(сьогодні) ";
+        dateText.innerText += "(сегодня) ";
     }
     if (currentDate.toLocaleDateString() == addDays(new Date(), 1).toLocaleDateString()) {
         dateText.innerText += "(завтра) "
