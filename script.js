@@ -1,4 +1,5 @@
 const dateText = document.getElementsByClassName('date-text')[0];
+const hwBlock = document.getElementsByClassName('hw-block')[0];
 const sunBlock = document.getElementsByClassName('sun')[0];
 const monBlock = document.getElementsByClassName('mon')[0];
 const tueBlock = document.getElementsByClassName('tue')[0];
@@ -9,7 +10,9 @@ const satBlock = document.getElementsByClassName('sat')[0];
 
 let currentDate = 0;
 let currentDayOfWeek = 0;
-let isPast12 = false;
+
+hwUrl = 'https://cors-anywhere.herokuapp.com/https://docs.google.com/document/d/e/2PACX-1vSVKDIRjk_cCLfdWRK31xmR8-XyeKE6ylPV7nV9_PyWMqF6N49U6cz3bIlhTHl8GoKWt3cSFky4jrIm/pub';
+
 function getDate() {
     let now = new Date();
     if (now.getHours() >= 12) {
@@ -36,7 +39,7 @@ function render() {
         dateText.innerText += "(завтра) "
 
     }
-    dateText.innerText += " " +currentDate.toLocaleDateString();
+    dateText.innerText += " " + currentDate.toLocaleDateString();
     redrawDaySchedule();
 }
 
@@ -81,10 +84,50 @@ function redrawDaySchedule() {
     }
 }
 
-function run() {
-    getDate();
+async function run() {
+    try {
+        getDate();
+        render();
+        getHW();
+    } catch (e) {
+        console.log("Error:" + e);
+    }
+}
 
-    render();
+async function getHW() {
+    const gotResponse = await fetch(hwUrl);
+    const gotHTML = await gotResponse.text();
+    console.log(gotHTML);
+    let dummy = document.createElement('html');
+    dummy.innerHTML = gotHTML;
+
+    let content = dummy.getElementsByClassName('c0');
+    console.log(content[1].innerText);
+    for (let i = 0; i < content.length; i++) {
+        let newRow = document.createElement("p");
+        newRow.innerText = content[i].innerText;
+        hwBlock.appendChild(newRow);
+    }
+}
+
+function httpGet(url) {
+    return new Promise(function (resolve, reject) {
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', url, true);
+        xhr.onload = function () {
+            if (this.status == 200) {
+                resolve(this.response)
+            } else {
+                let error = new Error(this.statusText);
+                error.code = this.status;
+                reject(error);
+            }
+        };
+        xhr.onerror = function () {
+            reject(new Error("Network error"));
+        };
+        xhr.send();
+    });
 }
 
 function changeDay(num) {
