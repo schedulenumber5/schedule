@@ -97,17 +97,10 @@ async function run() {
 async function getHW() {
     const gotResponse = await fetch(hwUrl);
     const gotHTML = await gotResponse.text();
-    console.log(gotHTML);
     let dummy = document.createElement('html');
     dummy.innerHTML = gotHTML;
-
-    let content = dummy.getElementsByClassName('c0');
-    console.log(content[1].innerText);
-    for (let i = 0; i < content.length; i++) {
-        let newRow = document.createElement("p");
-        newRow.innerText = content[i].innerText;
-        hwBlock.appendChild(newRow);
-    }
+    let contents = dummy.getElementsByClassName('c3')[0];
+    hwBlock.appendChild(contents);
 }
 
 function httpGet(url) {
