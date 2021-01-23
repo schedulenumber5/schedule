@@ -99,8 +99,9 @@ async function getHW() {
     const gotHTML = await gotResponse.text();
     let dummy = document.createElement('html');
     dummy.innerHTML = gotHTML;
-    let contents = dummy.getElementsByClassName('c3')[0];
-    hwBlock.appendChild(contents);
+    let contents = dummy.querySelector('#contents');
+    contents = contents.getElementsByTagName('div');
+    hwBlock.appendChild(contents[0]);
 }
 
 function httpGet(url) {
